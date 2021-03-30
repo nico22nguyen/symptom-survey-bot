@@ -46,6 +46,6 @@ def do_survey(web):
     print('survey complete')
 
 if __name__ == '__main__':
-    web = login("nicn", "3869544zZnN!")
+    web = login("USER", "PASS")
     do_survey(web)
     web.quit()
