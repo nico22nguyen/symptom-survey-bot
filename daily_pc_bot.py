@@ -23,7 +23,7 @@ if __name__ == '__main__':
     apt_made = False
 
     #login
-    web = ss_bot.login("nicn", "3869544zZnN!")
+    web = ss_bot.login("USER", "PASS")
     #do survey
     ss_bot.do_survey(web)
 
