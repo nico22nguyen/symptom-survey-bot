@@ -4,6 +4,8 @@
   - Serves as helper module for daily_pc_bot
   
 # apt_maker
+  - Logs into patient connect
+  - Books closest open appointment for given day, time
   - Provides appointment scheduling functionality for daily_pc_bot
  
 # daily_pc_bot
