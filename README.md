@@ -19,3 +19,7 @@
           
   NOTE: when running these modules locally, be sure to change USER to your BU Username
         and PASS to your BU Password
+
+--> Dependencies <--
+selenium
+webdriver_manager.chrome
