@@ -132,3 +132,18 @@ def make_apt(web, DATE, apt_time, apt_loc):
             continue_button = web.find_element_by_xpath('//*[@id="cmdStandardCancel"]')
             continue_button.click()
             ss_bot.load()
+
+if __name__ == '__main__':
+    #ask for day, time
+    month = input('month: ').strip()
+    day = input('day: ').strip()
+    apt_time = input('time: ').strip()
+    
+    #calc date
+    DATE = month + "/" + day + "/" + "2021"
+
+    #login
+    web = ss_bot.login('USER', 'PASS')
+
+    #make appointment
+    make_apt(web, DATE, apt_time, 'agganis')
