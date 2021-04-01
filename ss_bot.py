@@ -15,6 +15,12 @@ def login(login_creds):
     f.close()
     login_info[0] = login_info[0][:-1]
 
+    options = Options()
+
+    #comment/uncomment to toggle headless
+    #options.add_argument('--headless')
+    #options.add_argument('--disable-gpu')
+
     #boot chrome
     web = webdriver.Chrome(ChromeDriverManager().install())
 
