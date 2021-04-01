@@ -23,7 +23,7 @@ if __name__ == '__main__':
     apt_made = False
 
     #login
-    web = ss_bot.login("USER", "PASS")
+    web = ss_bot.login("login_credentials.txt")
     #do survey
     ss_bot.do_survey(web)
 
@@ -37,8 +37,8 @@ if __name__ == '__main__':
         pass
 
     if apt_made:
-        sys.exit()
         web.quit()
+        sys.exit()
 
     #if not, determine when i need an appointment
     DATE = get_apt_date(web)

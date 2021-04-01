@@ -89,8 +89,7 @@ def make_apt(web, DATE, apt_time, apt_loc):
     location_option.click()
 
     date = web.find_element_by_xpath('//*[@id="StartDate"]')
-    date.clear()
-    date.send_keys(DATE)
+    web.execute_script("document.getElementById('StartDate').value = '" + DATE + "';")
 
     search_button = web.find_element_by_xpath('//*[@id="apptSearch"]')
     search_button.click()
@@ -143,7 +142,7 @@ if __name__ == '__main__':
     DATE = month + "/" + day + "/" + "2021"
 
     #login
-    web = ss_bot.login('USER', 'PASS')
+    web = ss_bot.login("login_credentials.txt")
 
     #make appointment
     make_apt(web, DATE, apt_time, 'agganis')

@@ -1,14 +1,20 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from datetime import datetime
-import time
 from webdriver_manager.chrome import ChromeDriverManager
+import time
 
 def load():
     time.sleep(.5)
 
-#logs in using USER and PASS, returns logged in web driver
-def login(USER, PASS):
+#logs in using txt file, returns logged in web driver
+def login(login_creds):
+
+    #get login creds
+    f = open(login_creds, 'r')
+    login_info = f.readlines()
+    f.close()
+    login_info[0] = login_info[0][:-1]
+
     #boot chrome
     web = webdriver.Chrome(ChromeDriverManager().install())
 
@@ -19,8 +25,8 @@ def login(USER, PASS):
     p_word = web.find_element_by_xpath('//*[@id="j_password"]')
     continue_button = web.find_element_by_xpath('//*[@id="wrapper"]/div/form/button')
 
-    u_name.send_keys(USER)
-    p_word.send_keys(PASS)
+    u_name.send_keys(login_info[0])
+    p_word.send_keys(login_info[1])
     continue_button.click()
     load()
     return web
@@ -46,6 +52,6 @@ def do_survey(web):
     print('survey complete')
 
 if __name__ == '__main__':
-    web = login("USER", "PASS")
+    web = login("login_credentials.txt")
     do_survey(web)
     web.quit()
