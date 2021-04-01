@@ -17,8 +17,7 @@
   - Default appointment time = "1:00", default appointment location = "agganis"
           to change these, simply change the values passed into apt_maker()
           
-  NOTE: when running these modules locally, be sure to change USER to your BU Username
-        and PASS to your BU Password
+  NOTE: When running these modules locally, be sure to create file (default = login_credentials.txt) with your BU Username on the first line and your BU Password on the second line
 
 --> Dependencies <--
 selenium
