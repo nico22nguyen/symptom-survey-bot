@@ -45,3 +45,4 @@ if __name__ == '__main__':
 
     #make the appointment
     apt_maker.make_apt(web, DATE, "1:00", "agganis")
+    web.quit()
