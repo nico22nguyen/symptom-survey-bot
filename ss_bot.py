@@ -47,11 +47,13 @@ def do_survey(web):
     continue_button.click()
     load()
 
-    #click all NO buttons
+    #find all buttons
     submit_button = web.find_element_by_xpath('//*[@id="mainbody"]/footer/div/div[2]/input')
-    no_buttons = web.find_elements_by_class_name('required')
-    for i in range(8):
-        no_buttons[2 * i].click()
+    buttons = web.find_elements_by_class_name('required')
+
+    for i in range(7):
+        #click only no buttons
+        buttons[2 * i].click()
 
     #submit
     submit_button.click()
